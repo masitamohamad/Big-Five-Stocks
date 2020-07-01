@@ -1,7 +1,7 @@
 # Project 2: Big Five Stocks Dashboard
 
 ## Project Objective
-In this project, we will create an interactive dashboard visualizing the NASDAQ stock data of the 'Big Five' tech companies; Apple, Google, Amazon, Facebook and Microsoft, using JavaScript and HTML
+In this project, we will create an interactive dashboard visualizing NASDAQ stock data of the 'Big Five' tech companies; Apple, Google, Amazon, Facebook and Microsoft, using JavaScript and HTML
 
 ![wall-street](Images/wall-street.jpg)
 
