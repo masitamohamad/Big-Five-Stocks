@@ -16,7 +16,7 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 
 Pre-project tasks:
 - ETL: Jake
-- GitHub : Masita
+- GitHub: Masita
 
 Visualizations:
 - Candlestick chart: Jake
