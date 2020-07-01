@@ -3,6 +3,8 @@
 ## Project Objective
 In this project, we will create an interactive dashboard visualizing the NASDAQ stock data of the 'Big Five' tech companies; Apple, Google, Amazon, Facebook and Microsoft, using JavaScript and HTML
 
+![wall-street](Images/wall-street.jpg)
+
 ## Team Members
 
 * [Catie Clark](https://github.com/csidneyclark)
