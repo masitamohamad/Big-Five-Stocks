@@ -2,7 +2,7 @@
 
 ## Project Objective
 
-In this project, we will create an interactive dashboard visualizing NASDAQ stock data of the tech companies dubbed as the Big Five tech giants; Apple, Google, Amazon, Facebook and Microsoft, using JavaScript and HTML. These five prominent American technology companies have a combined market capitalization of over $4 trillion. 
+In this project, we will create an interactive dashboard visualizing NASDAQ stock data of the tech companies dubbed the Big Five tech giants; Apple, Google, Amazon, Facebook and Microsoft. These five prominent American technology companies have a combined market capitalization of over $4 trillion. 
 
 ![wall-street](Images/wall-street.jpg)
 
