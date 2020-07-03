@@ -22,13 +22,13 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 - Create a database-powered API using Python Flask application: Jake & Matt
 - Routes:
     * `/` : Home page (or where our dashboard will reside)
-    * `/api` : Data to be used for front-end visualization
+    * `/api` : Data to be used for front-end visualizations
 
 ### Front-end:
 - Bootstrap & HTML: Matt 
 - D3 Interactive Visualizations: Catie & Masita
-    * Candlestick chart
-    * Bar chart (Stock Volume)
+    * Candlestick Chart
+    * Bar / Pie Chart (Stock volume)
     * Tooltips
 - Leaflet.js (Company location, total employees & company info): Masita
 - Web scraping (Latest financial news): Masita
