@@ -2,7 +2,7 @@
 
 ## Project Objective
 
-In this project, we will create an interactive dashboard visualizing NASDAQ stock data of tech companies known as the Big Five tech giants; Apple, Google, Amazon, Facebook and Microsoft. These five prominent American technology companies have a combined market capitalization of over $4 trillion. 
+In this project, we will create an interactive dashboard visualizing NASDAQ stock data of tech companies known as the Big Five; Apple, Google, Amazon, Facebook and Microsoft. These five prominent American technology companies have a combined market capitalization of over $4 trillion. 
 
 ![wall-street](Images/wall-street.jpg)
 
@@ -25,14 +25,18 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
     * `/api` : Data to be used for front-end visualizations
 
 ### Front-end:
-- Bootstrap & HTML: Matt 
-- D3 Interactive Visualizations: Catie & Masita
-    * Candlestick Chart
-    * Bar / Pie Chart (Stock volume)
+- HTML, CSS & Bootstrap: Matt 
+- D3.js Interactive Visualizations: Catie & Masita
+    * Stock Prices: Candlestick Chart
+    * Stock Volume: Bar / Bubble / Pie Chart
     * Tooltips
 - Leaflet.js (Company location, total employees & company info): Masita
 - Web scraping (Latest financial news): Masita
-    
+
+### Deployment:
+- Connection to Back-end: Jake & Matt
+- Heroku app
+
 ***
 ## Data Source
 
