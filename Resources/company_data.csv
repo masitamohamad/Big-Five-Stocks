@@ -1,0 +1,6 @@
+index,company_name,ticker_symbol,founded,headquarters,revenue_2019,operating_income_2019,net_income_2019,total_assets_2019,total_equity_2019,num_employees
+apple,Apple Inc.,AAPL,"April 1, 1976; 44 years ago","Cupertino, California",US$260.174 billion,US$63.930 billion,US$55.256 billion,US$338.516 billion,US$90.488 billion,137000
+amazon,"Amazon.com, Inc.",AMZN,"July 5, 1994; 26 years ago","Seattle, Washington",US$280.522 billion,US$14.541 billion,US$11.588 billion,US$225.248 billion,US$62.06 billion,840400
+facebook,"Facebook, Inc.",FB,"February 4, 2004; 16 years ago","Menlo Park, California",US$70.697 billion,US$23.986 billion,US$18.485 billion,US$133.376 billion,US$101.054 billion,44942
+google,Alphabet Inc.,"GOOG, GOOGL","September 4, 1998; 21 years ago","Mountain View, California",US$161.857 billion,US$34.23 billion,US$34.34 billion,US$275.9 billion,US$201.4 billion,123048
+microsoft,Microsoft Corporation,MSFT,"April 4, 1975; 45 years ago","Redmond, Washington",US$125.8 billion,US$43.0 billion,US$39.2 billion,US$286.55 billion,US$102.33 billion,151163

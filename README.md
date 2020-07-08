@@ -18,15 +18,15 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 ### Pre-project tasks:
 - ETL (Extract, Transform, and Load): Jake
 
-### Back-end:
+### Backend:
 - Create a database-powered API using Python Flask application: Jake & Matt
 - Routes:
     * `/` : Home page (or where our dashboard will reside)
     * `/api` : Data to be used for front-end visualizations
 
 ### Front-end:
-- HTML, CSS & Bootstrap: Matt 
-- D3.js Interactive Visualizations: Catie & Masita
+- HTML, CSS & Bootstrap: Matt & Masita
+- D3.js Interactive Visualizations: Catie
     * Stock Prices: Candlestick Chart
     * Stock Volume: Bar / Bubble / Pie Chart
     * Tooltips
@@ -34,8 +34,7 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 - Web scraping (Latest financial news): Masita
 
 ### Deployment:
-- Connection to Back-end: Jake & Matt
-- Heroku app
+- Connection to backend (Heroku app): Jake & Matt
 
 ***
 ## Data Source
