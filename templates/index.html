@@ -17,6 +17,7 @@
 
   <!-- Point to the CSS file -->
   <link rel="stylesheet" href="../static/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/additional_styles.css">
 </head>
 
 <!--------------------------------------------------------------------------->
@@ -47,9 +48,25 @@
 
 <!--------------------------------------------------------------------------->
 
-<div class="container">
+<div class="container-fluid">
+
+  <div class="row"> 
+    <div class="col-md-3">
+    <p style="text-align:right"><strong>Latest Headlines from CNBC.com</strong></p>
+    </div>
+
+    <div class="col-md-9">
+    <div class="card border-secondary">  
+      <marquee scrollamount="4">
+        {% for element in send_to_html%}
+        <li>{{element}}</li>{% endfor %}
+       </marquee>
+    </div>
+    </div>
+  </div>
+
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="card">
         <div class="card-body">
           <canvas id="stockVolume">
@@ -58,7 +75,7 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div class="card">
         <div class="card-body">
           <canvas id="stockVolume">
@@ -69,9 +86,8 @@
 
     <!-- Map -->  
     <div class="col-md-4"> 
-      <div class="c">
         <div class="chart-title">
-        Map
+        <p>Map</p>
         </div>
         <div class="chart-stage">
           <div id="map" style="width: 400px; height: 400px"></div>
