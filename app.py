@@ -19,6 +19,8 @@ def scrape_news():
     for time in timestamp_parent:
         news_timestamp.append(time.text)
     
+    news_timestamp = [item + ':' for item in news_timestamp]
+    
     joined_lists = [' '.join(x) for x in zip(news_timestamp,news_headline)]
 
     return joined_lists

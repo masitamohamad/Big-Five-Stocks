@@ -1,12 +1,20 @@
 // Create a map object
-var mymap = L.map('map').setView([38.7575, -99.0100], 3);
 
-L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-  maxZoom: 5,
-  id: "mapbox.satellite",
-  accessToken: API_KEY
-}).addTo(myMap);
+var mymap = L.map('map').setView([38.7575, -99.0100], 9);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    id: "mapbox.satellite",
+}).addTo(mymap);
+
+
+
+// var basemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+//   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+//   maxZoom: 5,
+//   id: "mapbox.satellite",
+//   accessToken: API_KEY
+// }).addTo(myMap);
 
 
 // Define a markerSize function that will give each city a different radius based on its population
