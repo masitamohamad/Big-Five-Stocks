@@ -1,0 +1,6 @@
+index,company_name,ticker_symbol,founded,headquarters,revenue_2019,operating_income_2019,net_income_2019,total_assets_2019,total_equity_2019,num_employees
+apple,Apple Inc.,AAPL,4/1/1976,"Cupertino, California","260,174,000,000","63,930,000,000","55,256,000,000","338,516,000,000","90,488,000,000","137,000"
+amazon,"Amazon.com, Inc.",AMZN,7/5/1994,"Seattle, Washington","280,522,000,000","14,541,000,000","11,588,000,000","225,248,000,000","62,060,000,000","840,400"
+facebook,"Facebook, Inc.",FB,2/4/2004,"Menlo Park, California","70,697,000,000","23,986,000,000","18,485,000,000","133,376,000,000","101,054,000,000","44,942"
+google,Alphabet Inc.,GOOGL,9/4/1998,"Mountain View, California","161,857,000,000","34,230,000,000","34,340,000,000","275,900,000,000","201,400,000,000","123,048"
+microsoft,Microsoft Corporation,MSFT,4/4/1975,"Redmond, Washington","125,800,000,000","43,000,000,000","39,200,000,000","286,550,000,000","102,330,000,000","151,163"
