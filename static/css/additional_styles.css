@@ -16,3 +16,55 @@ canvas {
   width: 100%;
   height: auto;
 }
+
+#volume.card-body {
+  font: 12px 'Segoe UI';
+}
+
+#volume.card-body.axis path,
+#volume.axis line {
+  fill: none;
+  stroke: #808080;
+  shape-rendering: crispEdges;
+}
+
+#volume.card-body.bar {
+  fill: green;
+}
+
+#volume.card-body.bar:hover {
+  fill: whitesmoke ;
+}
+
+#volume.card-body.x.axis path {
+  display: none;
+}
+
+#volume.card-body.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: white;
+  color: white;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+#volume.card-body.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: whitesmoke;
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+#volume.card-body.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
