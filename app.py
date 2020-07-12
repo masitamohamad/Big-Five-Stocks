@@ -34,7 +34,7 @@ app = Flask(__name__)
 ###########################################################################################
 # Flask Routes
 ###########################################################################################
-# Route to render index.html template using data from Mongo
+# Route to render index.html template 
 
 @app.route("/")
 def home():

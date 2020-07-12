@@ -18,7 +18,7 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 ### Pre-project tasks:
 - ETL (Extract, Transform, and Load): Jake
 
-### Backend:
+### Back-end:
 - Create a database-powered API using Python Flask application: Jake & Matt
 - Routes:
     * `/` : Home page (or where our dashboard will reside)
@@ -34,7 +34,7 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 - Web scraping (Latest financial news): Masita
 
 ### Deployment:
-- Connection to backend (Heroku app): Jake & Matt
+- Connection to back-end: All
 
 ***
 ## Data Source

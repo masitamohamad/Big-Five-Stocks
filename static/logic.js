@@ -1,65 +1,60 @@
 // Create a map object
+var myMap = L.map("map", {
+  center: [44.265477, -115.241797],
+  zoom: 4
+});
 
-var mymap = L.map('map').setView([38.7575, -99.0100], 9);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    id: "mapbox.satellite",
-}).addTo(mymap);
-
-
-
-// var basemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-//   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-//   maxZoom: 5,
-//   id: "mapbox.satellite",
-//   accessToken: API_KEY
-// }).addTo(myMap);
+L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+  attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+  maxZoom: 18,
+  id: "mapbox.satellite",
+  accessToken: API_KEY
+}).addTo(myMap);
 
 
-// Define a markerSize function that will give each city a different radius based on its population
-function markerSize(population) {
-  return population / 40;
+// Define a markerSize function that will give each company a different radius based on its employee number
+function markerSize(employeeNumber) {
+  return employeeNumber / 3;
 }
 
-// Each city object contains the city's name, location and population
-var cities = [
+// Each company object contains the company's name, location and number of employee
+var companies = [
+  {
+    name: "Amazon.com, Inc",
+    location: [47.616858, -122.312920],
+    employeeNumber: 840400
+  },
   {
     name: "Apple Inc.",
-    location: [37.335033, -122.009007],
-    population: 8550405
-  },
-
-  {
-    name: "Amazon",
-    location: [47.623081, -122.336689],
-    population: 2720546
+    location: [37.335312, -122.007458],
+    employeeNumber: 137000
   },
   {
-    name: "Houston",
-    location: [29.7604, -95.3698],
-    population: 2296224
+    name: "Facebook, Inc.",
+    location: [37.478686, -122.159222],
+    employeeNumber: 44942
   },
   {
-    name: "Los Angeles",
-    location: [34.0522, -118.2437],
-    population: 3971883
+    name: "Google LLC",
+    location: [37.422279, -122.084004],
+    employeeNumber: 114096
   },
   {
-    name: "Omaha",
-    location: [41.2524, -95.9980],
-    population: 446599
+    name: "Microsoft Corporation",
+    location: [47.642964, -122.136755],
+    employeeNumber: 151163
   }
 ];
 
 // Loop through the cities array and create one marker for each city object
-for (var i = 0; i < cities.length; i++) {
-  L.circle(cities[i].location, {
+for (var i = 0; i < companies.length; i++) {
+  L.circle(companies[i].location, {
     fillOpacity: 0.75,
     color: "white",
-    fillColor: "purple",
+    fillColor: "grey",
     // Setting our circle's radius equal to the output of our markerSize function
     // This will make our marker's size proportionate to its population
-    radius: markerSize(cities[i].population)
-  }).bindPopup("<h1>" + cities[i].name + "</h1> <hr> <h3>Population: " + cities[i].population + "</h3>").addTo(myMap);
+    radius: markerSize(companies[i].employeeNumber)
+  }).bindPopup("<h5>" + companies[i].name + "</h5> <hr> <h6>Employee Number: " + companies[i].employeeNumber + "</h6>").addTo(myMap);
 }
+  
