@@ -36,6 +36,10 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 ### Deployment:
 - Connection to back-end: All
 
+## Additional Data Analysis
+
+![scaled-price](Images/Scaled_Open_Price.png)
+
 ***
 ## Data Source
 
