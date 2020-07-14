@@ -39,6 +39,8 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 ## Additional Data Analysis
 
 ![scaled-price](Images/Scaled_Open_Price.png)
+![scaled-volume](Images/Scaled_Volume.png)
+![total-volume](Images/Total_Volume.png)
 
 ***
 ## Data Source
