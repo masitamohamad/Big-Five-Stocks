@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Dashboard</title>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   
 <!-- Leaflet CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -60,19 +61,20 @@
   
   <!---------------------------------------Second Row--------------------------------------->
 
-  <!-- Candlestick -->  
-  <div class="row"> 
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
-          <div class="card-body">
-              <div id="plot">   
-                <script src="../static/plots.js"></script>
-              </div>
-          </div>
-      </div>
-    </div>
+<!-- Candlestick -->  
+<div class="row"> 
+  <div class="col-md-12"> 
+
+    <div class="card">
+    <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
+    <div id="plot-1"></div>
+    <script src = "plots.js"></script>
   </div>
+    </div>
+
+  </div>
+</div>
+
 
   <!---------------------------------------Third Row--------------------------------------->
   <div class="row">
