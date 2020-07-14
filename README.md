@@ -37,7 +37,7 @@ In this project, we will create an interactive dashboard visualizing NASDAQ stoc
 - Connection to back-end: All
 
 ### Misc. Tasks:
-- Stock Data Analysis Matt
+- Stock Data Analysis: Matt
 
 ## Additional Data Analysis
 
