@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup as bs
 import requests
 
 import numpy as np
+import pandas as pd
+import json
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -32,33 +34,11 @@ def scrape_news():
 
     return joined_lists
 
-
 ###########################################################################################
 # Database Setup - first thing's first, we need to connect to our stonks database
 ###########################################################################################
 # Create an engine to connect to our database
 engine = create_engine("sqlite:///stonks.sqlite")
-
-# # Map the tables contained in the database
-# Base = automap_base()
-# # Reflect the tables into python
-# Base.prepare(engine,reflect=True)
-
-# # Make our python classes based on the SQLite database
-# Stonks = Base.classes.stonks
-# Amzn = Base.classes.amazn
-# Fb = Base.classes.fb
-# Aapl = Base.classes.aapl
-# Ixic = Base.classes.ixic
-# Googl = Base.classes.googl
-# Msft = Base.classes.msft
-# Year15 = Base.classes.year15
-# Year16 = Base.classes.year16
-# Year17 = Base.classes.year17
-# Year18 = Base.classes.year18
-# Year19 = Base.classes.year19
-# Companies = Base.classes.companies
-# Agg_stonks = Base.classes.agg_stonks
 
 meta = MetaData()
 meta.reflect(bind=engine)
@@ -87,41 +67,22 @@ app = Flask(__name__)
 ###########################################################################################
 # Flask Routes
 ###########################################################################################
-# Route to render index.html template using data from Mongo
+# Route to render index.html template
 
 @app.route("/")
 def home():
   
     news_data = scrape_news()
     return render_template("index.html", send_to_html=news_data)
-    # NOTE: is it possible to return more than one thing e.g. a print out of all our available routes?
-
 
 # Let's try to return another route with the Stonks class/table in json format
 @app.route("/api/v1.0/stonks")
 def stonks():
     session = Session(engine)
 
-    #results = session.query(Stonks).all()
-    #results = session.query(Stonks.date,Stonks.year,Stonks.name,Stonks.open,Stonks.close,Stonks.high,Stonks.low,Stonks.volume).all()
-    #results = session.query(Stonks['date'],Stonks['year'],Stonksname,Stonks.open,Stonks.close,Stonks.high,Stonks.low,Stonks.volume).all()
-
     data = session.query(Stonks)
 
     session.close()
-
-    # Extract results into a dictionary format
-    # stonks_results = []
-    # for date, year, name, open, close, high, low, volume in results:
-    #     stonks_dict = {}
-    #     stonks_dict['date']=date
-    #     stonks_dict['year']=year
-    #     stonks_dict['name']=name
-    #     stonks_dict['open']=open
-    #     stonks_dict['close']=close
-    #     stonks_dict['high']=high
-    #     stonks_dict['low']=low
-    #     stonks_dict['volume']=volume
 
     name_date = []
     date = []
@@ -152,10 +113,6 @@ def stonks():
                     'low':low,
                     'volume':volume}
     
-    # Extract all of the individual results and store them in a list
-    # stonk_results = list(np.ravel(results))
-    
-    # return jsonify(stonk_results)
     return jsonify(stonks_dict)
 
 @app.route("/api/v1.0/fb")
@@ -189,9 +146,6 @@ def fb():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # fb_results = list(np.ravel(results))
-    # return jsonify(fb_results)
     return jsonify(fb_dict)
 
 @app.route("/api/v1.0/aapl")
@@ -225,9 +179,6 @@ def aapl():
                     'low':low,
                     'volume':volume}
     
-    # Extract all of the individual results and store them in a list
-    # aapl_results = list(np.ravel(results))
-    # return jsonify(aapl_results)
     return jsonify(aapl_dict)
 
 @app.route("/api/v1.0/amzn")
@@ -261,9 +212,6 @@ def amzn():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # amzn_results = list(np.ravel(results))
-    # return jsonify(amzn_results)
     return jsonify(amzn_dict)
 
 @app.route("/api/v1.0/ixic")
@@ -297,9 +245,6 @@ def ixic():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # ixic_results = list(np.ravel(results))
-    # return jsonify(ixic_results)
     return jsonify(ixic_dict)
 
 @app.route("/api/v1.0/googl")
@@ -333,9 +278,6 @@ def googl():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # googl_results = list(np.ravel(results))
-    # return jsonify(googl_results)
     return jsonify(googl_dict)
 
 @app.route("/api/v1.0/msft")
@@ -369,9 +311,6 @@ def msft():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # msft_results = list(np.ravel(results))
-    # return jsonify(msft_results)
     return jsonify(msft_dict)
 
 @app.route("/api/v1.0/companies")
@@ -411,9 +350,6 @@ def companies():
                     'total_equity_2019':total_equity_2019,
                     'num_employees':num_employees}
 
-    # Extract all of the individual results and store them in a list
-    # companies_results = list(np.ravel(results))
-    # return jsonify(companies_results)
     return jsonify(companies_dict)
 
 @app.route("/api/v1.0/agg_stonks")
@@ -450,10 +386,6 @@ def agg_stonks():
                     'avg_low':avg_low,
                     'total_volume':total_volume}
 
-    
-    # Extract all of the individual results and store them in a list
-    # agg_results = list(np.ravel(results))
-    # return jsonify(agg_results)
     return jsonify(agg_stonks_dict)
 
 @app.route("/api/v1.0/year15")
@@ -487,9 +419,6 @@ def year15():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # year15_results = list(np.ravel(results))
-    # return jsonify(year15_results)
     return jsonify(year15_dict)
 
 @app.route("/api/v1.0/year16")
@@ -523,9 +452,6 @@ def year16():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # year16_results = list(np.ravel(results))
-    # return jsonify(year16_results)
     return jsonify(year16_dict)
 
 @app.route("/api/v1.0/year17")
@@ -559,9 +485,6 @@ def year17():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # year17_results = list(np.ravel(results))
-    # return jsonify(year17_results)
     return jsonify(year17_dict)
 
 @app.route("/api/v1.0/year18")
@@ -594,9 +517,6 @@ def year18():
                     'high':high,
                     'low':low,
                     'volume':volume}
-    # Extract all of the individual results and store them in a list
-    # year18_results = list(np.ravel(results))
-    # return jsonify(year18_results)
     return jsonify(year18_dict)
 
 @app.route("/api/v1.0/year19")
@@ -630,10 +550,30 @@ def year19():
                     'low':low,
                     'volume':volume}
 
-    # Extract all of the individual results and store them in a list
-    # year19_results = list(np.ravel(results))
-    # return jsonify(year19_results)
     return jsonify(year19_dict)
+
+# Additional view routes
+
+@app.route("/amznview")
+def amznview():
+
+    return render_template('amzn.html')
+
+@app.route("/aaplview")
+def aaplview():
+
+    news_data = scrape_news()
+    return render_template('aapl.html', send_to_html=news_data)
+
+@app.route("/googlview")
+def googlview():
+
+    return render_template('googl.html')
+
+@app.route("/msftview")
+def msftview():
+
+    return render_template('msft.html')
 
 
 ###########################################################################################

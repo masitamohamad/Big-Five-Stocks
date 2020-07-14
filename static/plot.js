@@ -26,7 +26,7 @@ var tip = d3.tip()
     return "<strong>Volume:</strong> <span style='color:white'>" + d.volume + "</span>";
   })
 
-var svg = d3.select("#volume").append("svg")
+var svg = d3.select("#stockVolume").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
