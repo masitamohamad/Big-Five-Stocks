@@ -1,5 +1,5 @@
-var margin = {top: 10, right: 30, bottom: 30, left: 100},
-    width = 800 - margin.left - margin.right,
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+    width = 500 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 var format = d3.format("g");
@@ -34,7 +34,8 @@ var svg = d3.select("#stockVolume").append("svg")
 
 svg.call(tip);
 
-d3.tsv("data.tsv", type, function(error, data) {
+d3.csv("../Resources/aggregate.csv", type, function(error, data) {
+  console.log(data)
   x.domain(data.map(function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.volume; })]);
 
