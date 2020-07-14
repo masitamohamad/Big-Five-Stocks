@@ -35,11 +35,11 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Stock Ticker</a>
     <div class="dropdown-menu" style="">
-      <a class="dropdown-item" href="#">AMZN</a>
-      <a class="dropdown-item" href="./aaplview">AAPL</a>
-      <a class="dropdown-item" href="#">FB</a>
-      <a class="dropdown-item" href="#">GOOGL</a>
-      <a class="dropdown-item" href="#">MSFT</a>
+      <a class="dropdown-item" href="index.html">AMZN</a>
+      <a class="dropdown-item" href="aapl.html">AAPL</a>
+      <a class="dropdown-item" href="fb.html">FB</a>
+      <a class="dropdown-item" href="googl.html">GOOGL</a>
+      <a class="dropdown-item" href="msft.html">MSFT</a>
     </div>
   </li>
 </ul>
@@ -50,12 +50,14 @@
     <p style="text-align:right"><strong>Latest Headlines from CNBC.com</strong></p>
     </div>
     <div class="col-md-9">
+      <div id="news">
     <div class="card border-secondary">  
       <marquee scrollamount="4">
         {% for element in send_to_html%}
         <li>{{element}}</li>{% endfor %}
        </marquee>
     </div>
+  </div>
     </div>
   </div>
   
@@ -64,13 +66,12 @@
   <!-- Candlestick -->  
   <div class="row"> 
     <div class="col-md-12"> 
-
       <div class="card">
-      <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
+      <div class="card-header"><strong>2018 NASDAQ stock data of Amazon (AMZN)</strong></div>
       <div id="plot-1"></div>
       <script src = "plots.js"></script>
       </div>
-
+  
   <!---------------------------------------Third Row--------------------------------------->
   <br>
   <div class="row">
@@ -130,20 +131,20 @@
 
   <!-- Volume Chart --> 
 
-    <div class="col-md-5">
-      <div class="card">
-        <div class="card-header">Total Stock Volume ('19)</div>
-          <div class="card-body">
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-header">Total Stock Volume ('19)</div>
+        <div class="card-body">
 
-          <div id="stockVolume">   
-            <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
-            <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-            <script type="text/javascript" src="../static/plot.js"></script> -->
-          </div>
+        <div id="stockVolume">   
+          <script src="http://d3js.org/d3.v3.min.js"></script>
+          <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+          <script type="text/javascript" src="../static/plot.js"></script>
+        </div>
 
-          </div>
-      </div>
+        </div>
     </div>
+  </div>
 
     <!-- Map -->  
     <div class="col-md-4">

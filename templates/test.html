@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+<!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+  <!-- Point to the CSS file -->
+  <link rel="stylesheet" href="../static/css/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/additional_styles.css">
+</head>
+<!--------------------------------------------------------------------------->
+<body class="application">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./"><b>Big Five Stocks Interactive Visualization</b></a>
+      </div>
+    </div>
+  </div>
+<!--------------------------------------------------------------------------->
+<ul class="nav nav-tabs">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
+    <div class="dropdown-menu" style="">
+      <a class="dropdown-item" href="#">Amazon.com, Inc.</a>
+      <a class="dropdown-item" href="#">Apple Inc.</a>
+      <a class="dropdown-item" href="#">Facebook, Inc.</a>
+      <a class="dropdown-item" href="#">Google</a>
+      <a class="dropdown-item" href="#">Microsoft</a>
+    </div>
+  </li>
+</ul>
+<!--------------------------------------------------------------------------->
+<div class="container-fluid">
+  <div class="row"> 
+    <div class="col-md-3">
+    <p style="text-align:right"><strong>Latest Headlines from CNBC.com</strong></p>
+    </div>
+    <div class="col-md-9">
+    <div class="card border-secondary">  
+      <marquee scrollamount="4">
+        {% for element in send_to_html%}
+        <li>{{element}}</li>{% endfor %}
+       </marquee>
+    </div>
+    </div>
+  </div>
+  <!-- Volume Chart --> 
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <div id="volume">
+          <div class="card-header">Total Stock Volume</div>
+        <div class="card-body">
+          <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
+          <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+          <script type="text/javascript" src="../static/plot.js"></script> -->
+          <canvas id="stockVolume">   
+          </canvas>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card border-secondary mb-3">
+        <div class="card-header">Company information</div>
+        <div class="card-body">
+          <p class="card-text">Add table here.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Map -->  
+    <div class="col-md-4"> 
+        <div class="chart-title">
+        </div>
+        <div class="chart-stage">
+          <div id="map" style="width: 400px; height: 400px"></div>
+        </div>
+        </div>
+      </div>
+      <!-- Map -->  
+  </div>
+  <!-- Candlestick -->  
+  <div class="row"> 
+    <div class="col-md-1"></div>
+    <div class="col-md-10 "> 
+      <br>
+      <br>
+      <div class="card">
+      <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
+      <div id="plot-1"></div>
+      <script src = "plots.js"></script>
+    </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+      <br>
+      <br>
+      <div class="row"> 
+        <div class="col-md-1"></div>
+        <div class="col-md-10 "> 
+          <br>
+          <br>
+          <div class="card">
+          <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
+          <div id="plot-2"></div>
+          <script src = "plots.js"></script>
+        </div>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+          <br>
+          <br>
+          <div class="row"> 
+            <div class="col-md-1"></div>
+            <div class="col-md-10 "> 
+              <br>
+              <br>
+              <div class="card">
+              <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
+              <div id="plot-3"></div>
+              <script src = "plots.js"></script>
+            </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+          </div>
+              <br>
+              <br>
+              <div class="row"> 
+                <div class="col-md-1"></div>
+                <div class="col-md-10 "> 
+                  <br>
+                  <br>
+                  <div class="card">
+                  <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
+                  <div id="plot-4"></div>
+                  <script src = "plots.js"></script>
+                </div>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+              </div>
+                  <br>
+                  <br>
+                  <div class="row"> 
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10 "> 
+                      <br>
+                      <br>
+                      <div class="card">
+                      <div class="card-header">Historical NASDAQ stock data of Apple, Amazon, Google, Microsoft, and Facebook</div>
+                      <div id="plot-5"></div>
+                      <script src = "plots.js"></script>
+                    </div>
+                      </div>
+                      <div class="col-md-1"></div>
+                    </div>
+                  </div>
+                      <br>
+                      <br>
+  <!-- API key -->
+  <!-- <script type="text/javascript" src="../static/config.js"></script> -->
+  <!-- Our Leaflet JS -->
+  <!-- <script type="text/javascript" src="../static/logic.js"></script> -->
+<!-- JS, Popper.js, and jQuery -->
+<!--These are <script>s from Bootstrap website. Many BS components require the use of JavaScript to function -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

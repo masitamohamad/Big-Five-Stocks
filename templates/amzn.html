@@ -50,26 +50,28 @@
     <p style="text-align:right"><strong>Latest Headlines from CNBC.com</strong></p>
     </div>
     <div class="col-md-9">
+      <div id="news">
     <div class="card border-secondary">  
       <marquee scrollamount="4">
         {% for element in send_to_html%}
         <li>{{element}}</li>{% endfor %}
        </marquee>
     </div>
+  </div>
     </div>
   </div>
   
   <!---------------------------------------Second Row--------------------------------------->
 
-   <!-- Candlestick -->  
-   <div class="row"> 
+  <!-- Candlestick -->  
+  <div class="row"> 
     <div class="col-md-12"> 
       <div class="card">
-      <div class="card-header"><strong>2018 NASDAQ stock data of Apple (AAPL)</strong></div>
+      <div class="card-header"><strong>2018 NASDAQ stock data of Amazon (AMZN)</strong></div>
       <div id="plot-1"></div>
       <script src = "plots.js"></script>
       </div>
-  
+
   <!---------------------------------------Third Row--------------------------------------->
   <br>
   <div class="row">
@@ -83,43 +85,43 @@
               <tbody>
                 <tr class="table-primary">
                   <th scope="row">Company Name</th>
-                  <td>Apple Inc.</td>
+                  <td>Amazon.com, Inc.</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Traded as</th>
-                  <td>AAPL</td>
+                  <td>AMZN</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Founded</th>
-                  <td>1-Apr-1976</td>
+                  <td>5-Jul-1994</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Headquarters</th>
-                  <td>Cupertino, California</td>
+                  <td>Seattle, Washington</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Revenue ('19)</th>
-                  <td>$260,174,000,000</td>
+                  <td>$280,522,000,000</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Operating Income ('19)</th>
-                  <td>$63,930,000,000</td>
+                  <td>$14,541,000,000</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Net Income ('19)</th>
-                  <td>$55,256,000,000</td>
+                  <td>$11,588,000,000</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Total Assets ('19)</th>
-                  <td>$338,516,000,000</td>
+                  <td>$225,248,000,000</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Total Equity ('19)</th>
-                  <td>$90,488,000,000</td>
+                  <td>$62,060,000,000</td>
                 </tr>
                 <tr class="table-primary">
                   <th scope="row">Number of Employees ('19)</th>
-                  <td>137,000</td>
+                  <td>840,400</td>
                 </tr>
               </tbody>
             </table>
@@ -135,9 +137,9 @@
           <div class="card-body">
 
           <div id="stockVolume">   
-            <script src="http://d3js.org/d3.v3.min.js"></script>
+            <!-- <script src="http://d3js.org/d3.v3.min.js"></script>
             <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-            <script type="text/javascript" src="../static/plot.js"></script>
+            <script type="text/javascript" src="../static/plot.js"></script> -->
           </div>
 
           </div>

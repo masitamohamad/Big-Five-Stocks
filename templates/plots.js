@@ -40,7 +40,7 @@ var arr = ["amazon.csv", "facebook.csv","google.csv","microsoft.csv","apple.csv"
           b: 40,
           l: 60
         },
-        showlegend: false,
+        showlegend: true,
         //     xaxis: {
         //       autorange: true, 
         //       domain: [0, 1], 
@@ -99,7 +99,7 @@ var arr = ["amazon.csv", "facebook.csv","google.csv","microsoft.csv","apple.csv"
           b: 40,
           l: 60
         },
-        showlegend: false,
+        showlegend: true,
         //     xaxis: {
         //       autorange: true, 
         //       domain: [0, 1], 
@@ -158,7 +158,7 @@ var arr = ["amazon.csv", "facebook.csv","google.csv","microsoft.csv","apple.csv"
           b: 40,
           l: 60
         },
-        showlegend: false,
+        showlegend: true,
         //     xaxis: {
         //       autorange: true, 
         //       domain: [0, 1], 
@@ -217,7 +217,7 @@ var arr = ["amazon.csv", "facebook.csv","google.csv","microsoft.csv","apple.csv"
           b: 40,
           l: 60
         },
-        showlegend: false,
+        showlegend: true,
         //     xaxis: {
         //       autorange: true, 
         //       domain: [0, 1], 
@@ -276,7 +276,7 @@ var arr = ["amazon.csv", "facebook.csv","google.csv","microsoft.csv","apple.csv"
           b: 40,
           l: 60
         },
-        showlegend: false,
+        showlegend: true,
         //     xaxis: {
         //       autorange: true, 
         //       domain: [0, 1], 
