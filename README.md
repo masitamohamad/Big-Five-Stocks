@@ -4,7 +4,7 @@
 
 In this project, we will create an interactive dashboard visualizing NASDAQ stock data of tech companies known as the Big Five; Apple, Google, Amazon, Facebook and Microsoft. These five prominent American technology companies have a combined market capitalization of over $4 trillion. 
 
-![wall-street](Images/wall-street.jpg)
+![screenshot](Images/screenshot.jpg)
 
 ## Team Members
 
