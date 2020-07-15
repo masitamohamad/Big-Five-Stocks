@@ -99,7 +99,7 @@ var arr = ["amazon.csv", "facebook.csv","google.csv","microsoft.csv","apple.csv"
           b: 40,
           l: 60
         },
-        showlegend: true,
+        showlegend: false,
         //     xaxis: {
         //       autorange: true, 
         //       domain: [0, 1], 
